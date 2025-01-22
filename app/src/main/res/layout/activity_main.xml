@@ -39,21 +39,41 @@
 
         <Button
             android:id="@+id/true_button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/true_button" />
 
         <Button
             android:id="@+id/false_button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/false_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/previous_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/previous_button"
+            android:drawableStart="@mipmap/arrow_left"
+            android:drawablePadding="4dp" />
 
         <Button
             android:id="@+id/next_button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next_button" />
+            android:text="@string/next_button"
+            android:drawableEnd="@mipmap/arrow_right"
+            android:drawablePadding="4dp" />
     </LinearLayout>
 
 </LinearLayout>
