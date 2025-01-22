@@ -57,23 +57,38 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+<!--        <Button-->
+<!--            android:id="@+id/previous_button"-->
+<!--            style="?android:attr/borderlessButtonStyle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/previous_button"-->
+<!--            android:drawableStart="@mipmap/arrow_left"-->
+<!--            android:drawablePadding="4dp" />-->
+
+        <ImageButton
             android:id="@+id/previous_button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/previous_button"
-            android:drawableStart="@mipmap/arrow_left"
-            android:drawablePadding="4dp" />
+            android:contentDescription="@string/previous_button"
+            android:src="@mipmap/arrow_left"/>
 
-        <Button
+<!--        <Button-->
+<!--            android:id="@+id/next_button"-->
+<!--            style="?android:attr/borderlessButtonStyle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/next_button"-->
+<!--            android:drawableEnd="@mipmap/arrow_right"-->
+<!--            android:drawablePadding="4dp" />-->
+        <ImageButton
             android:id="@+id/next_button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next_button"
-            android:drawableEnd="@mipmap/arrow_right"
-            android:drawablePadding="4dp" />
+            android:contentDescription="@string/next_button"
+            android:src="@mipmap/arrow_right"/>
     </LinearLayout>
 
 </LinearLayout>
