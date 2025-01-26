@@ -1,10 +1,10 @@
 
 package com.example.geoquiz
 
-import android.util.Log
+//import android.util.Log
 import androidx.lifecycle.ViewModel
 
-private const val TAG = "QuizViewModel"
+//private const val TAG = "QuizViewModel"
 
 class QuizViewModel : ViewModel() {
 
@@ -25,6 +25,8 @@ class QuizViewModel : ViewModel() {
 ////            }
 //        }
 //
+    var isCheater = false
+
     val currentQuestionAnswer: Boolean
         get() = questionBank[currentIndex].answer
 
@@ -43,8 +45,8 @@ class QuizViewModel : ViewModel() {
         }
     }
 
-    fun checkAnswer(userAnswer: Boolean): Boolean {
-        Log.d(TAG, "User answer: $userAnswer")
-        return userAnswer == currentQuestionAnswer
-    }
+//    fun checkAnswer(userAnswer: Boolean): Boolean {
+//        Log.d(TAG, "User answer: $userAnswer")
+//        return userAnswer == currentQuestionAnswer
+//    }
 }
