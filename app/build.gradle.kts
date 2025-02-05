@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
 
 plugins {
     alias(libs.plugins.android.application)

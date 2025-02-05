@@ -54,9 +54,9 @@ class CrimeListFragment : Fragment() {
 
         private lateinit var crime: Crime
 
-        private val titleTextView: TextView = itemView.findViewById(R.id.crime_title)
-        private val dateTextView: TextView = itemView.findViewById(R.id.crime_date)
-        private val solvedImageView: ImageView = itemView.findViewById(R.id.crime_solved)
+        private val titleTextView: TextView = itemView.findViewById(R.id.crime_item_title)
+        private val dateTextView: TextView = itemView.findViewById(R.id.crime_item_date)
+        private val solvedImageView: ImageView = itemView.findViewById(R.id.crime_item_solved)
 
 
         init {
