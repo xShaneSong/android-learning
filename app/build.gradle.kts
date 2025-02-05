@@ -3,6 +3,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    id("androidx.room") version "2.7.0-alpha13"
+
+    id("com.google.devtools.ksp") version "2.1.0-1.0.29"
 }
 
 android {
@@ -38,6 +42,11 @@ android {
     buildFeatures {
         compose = true
     }
+    room {
+//        arg("room.schemaLocation", "$projectDir/schemas")
+        schemaDirectory("$projectDir/schemas")
+//        schemaLocation("/data/data/${applicationId}/databases/schema/")
+    }
 }
 
 dependencies {
@@ -54,6 +63,11 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.extensions)
+
+    val room_version = "2.7.0-alpha13"
+    implementation("androidx.room:room-runtime:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
