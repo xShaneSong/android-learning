@@ -4,12 +4,17 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,10 +51,30 @@ class CrimeListFragment : Fragment() {
         ViewModelProvider(this)[CrimeListViewModel::class.java]
     }
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+//        setHasOptionsMenu(true)
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.fragment_crime_list, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                // Handle menu item selection if needed
+                return when (menuItem.itemId) {
+                    R.id.new_crime -> {
+                        val crime = Crime()
+                        crimeListViewModel.addCrime(crime)
+                        callbacks?.onCrimeSelected(crime.id)
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+        })
 //        Log.d(TAG, "Total crimes: ${crimeListViewModel.crimes.size}")
-//    }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -78,6 +103,11 @@ class CrimeListFragment : Fragment() {
             }
         )
     }
+
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        super.onCreateOptionsMenu(menu, inflater)
+//        inflater.inflate(R.menu.fragment_crime_list, menu)
+//    }
 
     companion object {
         fun newInstance(): CrimeListFragment {

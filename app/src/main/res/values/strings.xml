@@ -7,4 +7,5 @@
     <string name="crime_item_title">Crime Title</string>
     <string name="crime_item_date">Crime Date</string>
     <string name="crime_item_solved">Crime Solved Image</string>
+    <string name="new_crime">New Crime</string>
 </resources>
