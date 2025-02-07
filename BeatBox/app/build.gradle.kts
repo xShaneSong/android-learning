@@ -60,6 +60,9 @@ dependencies {
 
 
     testImplementation(libs.junit)
+    testImplementation("org.mockito:mockito-core:5.4.0")
+    testImplementation(libs.junit.jupiter)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
